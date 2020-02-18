@@ -38,3 +38,5 @@ class XVA():
 if __name__ == "__main__":
     product_details = XVA(2,0.40,300) #2y Swap ; Counterparty CDS Spread:300bps
     value_adjustment = product_details.calculate(1e6) #Notional: 1,000,000 NPV
+    va_possibilities = [XVA(2,expected_rec_rate,300).calculate(1e6) for expected_rec_rate in np.arange(0,1,0.1)]
+
